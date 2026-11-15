@@ -3,8 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bolle Blu – Lavanderia self service</title>
+<title>Lava &amp; Asciuga – Lavanderia self service a NoLo, Milano</title>
 <meta name="description" content="Lavanderia self service a NoLo, Milano, in Viale Monza 109. Aperta tutti i giorni, anche i festivi, dalle 7:30 alle 22.">
+<meta property="og:title" content="Lava &amp; Asciuga – Lavanderia self service a NoLo, Milano">
+<meta property="og:description" content="Lavatrici e asciugatrici self service in Viale Monza 109. Aperti tutti i giorni, anche i festivi, dalle 7:30 alle 22.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta name="theme-color" content="#07606f">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DryCleaningOrLaundry","name":"Lava & Asciuga","description":"Lavanderia self service a NoLo, Milano","address":{"@type":"PostalAddress","streetAddress":"Viale Monza 109","addressLocality":"Milano","addressCountry":"IT"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:30","closes":"22:00"}],"paymentAccepted":"Cash","priceRange":"€"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap">
 <style>
@@ -33,7 +39,6 @@ svg.i{width:28px;height:28px}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.2rem}
 .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.25rem}
-.logo i{display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--brand);color:#fff;font-style:normal;font-size:1.1rem}
 nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}nav a{color:var(--ink);text-decoration:none;font-weight:700}nav a:hover{color:var(--brand)}
 .mnav{display:none;overflow-x:auto;gap:.5rem;padding:0 0 .7rem;scrollbar-width:none}
 .mnav a{flex:none;padding:.45rem 1rem;border-radius:999px;background:var(--tint);color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem}
@@ -49,10 +54,9 @@ nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}nav a{color:va
 .chips li{display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-weight:700;font-size:.95rem}
 .chips svg{width:18px;height:18px;color:var(--brand)}
 .shot{position:relative;width:min(100%,440px);margin-inline:auto}
-.photo{aspect-ratio:720/1034;border-radius:28px;background:var(--shop) center/cover no-repeat;box-shadow:var(--shadow)}
+.photo{aspect-ratio:720/1034;border-radius:0 0 28px 28px;background:var(--shop) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%),linear-gradient(to right,transparent 0,#000 15%,#000 85%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 16%),linear-gradient(to right,transparent 0,#000 15%,#000 85%,transparent 100%);mask-composite:intersect}
 .badge{position:absolute;left:-.6rem;bottom:2.4rem;background:#fff;border-radius:16px;padding:.8rem 1.1rem;box-shadow:var(--shadow);font-weight:800;line-height:1.25}
 .badge small{display:block;color:var(--muted);font-weight:500}
-.banner{aspect-ratio:5/4;border-radius:28px;background:linear-gradient(140deg,#ffc27a,#ff8f1f);display:grid;place-items:center;text-align:center;color:#4a3200;font-weight:800;padding:1rem;box-shadow:var(--shadow)}
 
 .steps{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));counter-reset:s}
 .step{background:var(--tint);border-radius:var(--r);padding:1.6rem;counter-increment:s}
@@ -70,14 +74,8 @@ nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}nav a{color:va
 .extra div{display:flex;justify-content:space-between;gap:1rem;background:var(--tint);border-radius:14px;padding:1rem 1.3rem;font-weight:700}
 .note{text-align:center;color:var(--muted);font-size:.95rem;margin:1.4rem auto 0}
 .about{display:grid;gap:2.5rem;align-items:center}@media (min-width:880px){.about{grid-template-columns:1fr 1fr}}
-.about .banner{aspect-ratio:4/3}
 .tick{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.6rem}
 .tick li{display:flex;gap:.6rem;align-items:flex-start;font-weight:700}.tick svg{flex:none;width:22px;height:22px;color:var(--brand);margin-top:.15rem}
-.gal{display:grid;gap:1rem;grid-template-columns:repeat(2,1fr)}
-@media (min-width:860px){.gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:190px}.gal .big{grid-column:span 2;grid-row:span 2}}
-.ph{border-radius:var(--r);min-height:170px;display:flex;align-items:flex-end;padding:1rem;color:#fff;font-weight:800;background:linear-gradient(150deg,#52cfe0,#1699ad)}
-.ph.b{background:linear-gradient(150deg,#7fb0ff,#4a78e0)}.ph.c{background:linear-gradient(150deg,#ffc27a,#f08a3c)}.ph.d{background:linear-gradient(150deg,#7fdcb5,#2fb283)}
-.ph small{display:block;font-weight:500;opacity:.9}
 .gal2{display:grid;gap:1.2rem}@media (min-width:760px){.gal2{grid-template-columns:1fr 1fr}}
 .gal2 figure{margin:0}.gal2 img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}.gal2 figcaption{margin-top:.6rem;font-weight:800}
 .rv{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
@@ -98,6 +96,39 @@ details[open] summary::after{content:"\2013"}details p{margin:0 0 1.2rem;color:v
 .map svg{width:46px;height:46px;color:#e5483a;display:block;margin:0 auto .4rem}
 footer{background:var(--tint);padding:2rem 0 calc(2rem + env(safe-area-inset-bottom,0px));color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem}
+
+/* --- miglioramenti --- */
+header.top{transition:box-shadow .25s}header.top.scrolled{box-shadow:0 10px 26px -18px rgba(10,80,95,.55)}
+nav a{padding:.3rem 0;border-bottom:2px solid transparent}nav a.on{color:var(--brand);border-color:var(--sun)}
+.mnav a.on{background:var(--brand);color:#fff}
+.status{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.35rem 1rem;margin:0 0 1.1rem}
+.status i{width:.65rem;height:.65rem;border-radius:50%;background:#8a9aa1}
+.status.open i{background:#1f9d55;box-shadow:0 0 0 4px rgba(31,157,85,.22)}.status.closed i{background:#d64545;box-shadow:0 0 0 4px rgba(214,69,69,.18)}
+.rv-on .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv-on .reveal.in{opacity:1;transform:none}
+.card,.price,.rev{transition:transform .25s ease,box-shadow .25s ease}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.card:hover,.price:hover,.rev:hover{transform:translateY(-4px);box-shadow:0 16px 34px -16px rgba(10,80,95,.4)}}
+fieldset{border:0;margin:0 0 1.1rem;padding:0;min-width:0}legend{font-weight:800;padding:0;margin-bottom:.6rem}
+.calc{margin-top:1.6rem;background:var(--tint);border-radius:var(--r);padding:1.7rem;display:grid;gap:1.4rem}
+@media (min-width:760px){.calc{grid-template-columns:1fr 1fr;align-items:center}}
+.calc p{color:var(--muted)}.total{font-size:3rem;font-weight:800;color:var(--brand);line-height:1;letter-spacing:-.03em}
+.total small{display:block;color:var(--muted);font-size:1rem;font-weight:500;letter-spacing:0;margin-top:.3rem}
+.opts{display:flex;flex-wrap:wrap;gap:.6rem}.opts label{position:relative;cursor:pointer}.opts input{position:absolute;opacity:0;inset:0}
+.opts span{display:inline-block;padding:.6rem 1.15rem;border-radius:999px;background:#fff;border:2px solid var(--line);font-weight:800}
+.opts input:checked+span{background:var(--brand);border-color:var(--brand);color:#fff}
+.opts input:focus-visible+span{outline:3px solid var(--sun);outline-offset:2px}
+.stepper{display:flex;align-items:center;gap:1rem}
+.stepper button{width:46px;height:46px;border-radius:50%;border:2px solid var(--brand);background:#fff;color:var(--brand);font:800 1.5rem/1 Manrope,sans-serif;cursor:pointer}
+.stepper button:hover{background:var(--brand);color:#fff}.stepper output{min-width:2ch;text-align:center;font-weight:800;font-size:1.6rem}
+.gal2 img{cursor:zoom-in}
+dialog#lb{border:0;padding:0;background:transparent;width:min(96vw,1100px);max-width:none;max-height:none;overflow:visible}
+dialog#lb::backdrop{background:rgba(5,25,32,.85)}
+dialog#lb img{display:block;width:100%;height:auto;max-height:88vh;object-fit:contain;border-radius:var(--r)}
+dialog#lb .x{position:absolute;top:.6rem;right:.6rem;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font:800 1.2rem Manrope,sans-serif;cursor:pointer;box-shadow:var(--shadow)}
+.logo img{display:block;height:46px;width:auto}
+.brandcard{background:#fff;border:1px solid var(--line);border-radius:28px;padding:1.6rem;display:grid;place-items:center;box-shadow:var(--shadow)}
+.brandcard img{display:block;width:min(100%,460px);height:auto}
+footer .wrap{align-items:center}footer img{height:40px;width:auto;display:block;mix-blend-mode:multiply}
 </style>
 </head>
 <body>
@@ -117,16 +148,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
 
 <header class="top"><div class="wrap">
   <div class="bar">
-    <a class="logo" href="#top"><i>B</i>Bolle Blu</a>
+    <a class="logo" href="#top"><img src="logo-intestazione.png" alt="Lava e Asciuga, Viale Monza 109" width="640" height="158"></a>
     <nav aria-label="Principale"><ul><li><a href="#servizi">Servizi</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#chi-siamo">Chi siamo</a></li><li><a href="#locale">Il locale</a></li><li><a href="#recensioni">Recensioni</a></li><li><a href="#faq">FAQ</a></li><li><a href="#dove">Dove siamo</a></li></ul></nav>
     <a class="btn sun" href="#dove">Come arrivare</a>
   </div>
   <div class="mnav" aria-label="Sezioni"><a href="#servizi">Servizi</a><a href="#prezzi">Prezzi</a><a href="#chi-siamo">Chi siamo</a><a href="#locale">Il locale</a><a href="#recensioni">Recensioni</a><a href="#faq">FAQ</a><a href="#dove">Dove siamo</a></div>
 </div></header>
 
+<!-- Foto e loghi: carica i file nella stessa cartella di questa pagina (vedi i nomi nei tag img e in --shop nel CSS) -->
 <main id="contenuto">
 <div id="top" class="hero"><div class="wrap">
   <div>
+    <p class="status" id="status" aria-live="polite"><i></i><span>Aperti tutti i giorni, 7:30–22:00</span></p>
     <h1>Il tuo bucato, quando vuoi tu.</h1>
     <p class="lead">Lavatrici e asciugatrici self service aperte tutti i giorni, anche i festivi, senza appuntamento e senza app da scaricare.</p>
     <div class="cta"><a class="btn" href="#prezzi">Vedi i prezzi</a><a class="btn ghost" href="#servizi">Scopri i servizi</a></div>
@@ -177,16 +210,35 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
       <div class="price"><div class="kg">Asciugatrice</div><div class="sub">Ciclo di 20 minuti</div><div class="n">€ 4,50</div></div>
     </div>
     <div class="extra"><div><span>Detersivo, ammorbidente e altri prodotti</span><span>Al distributore</span></div></div>
+    <div class="calc" id="calc">
+      <div>
+        <h3>Calcola la tua spesa</h3>
+        <p>Scegli la lavatrice e i cicli di asciugatura: vedi subito quanto portare in contanti.</p>
+        <div class="total"><span id="tot">€ 8,50</span><small>totale da pagare in contanti</small></div>
+      </div>
+      <div>
+        <fieldset><legend>Lavatrice</legend>
+          <div class="opts">
+            <label><input type="radio" name="w" value="4" checked><span>8 kg, € 4</span></label>
+            <label><input type="radio" name="w" value="8"><span>16 kg, € 8</span></label>
+            <label><input type="radio" name="w" value="0"><span>Nessuna</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>Cicli di asciugatura (20 minuti, € 4,50 l’uno)</legend>
+          <div class="stepper"><button type="button" id="dec" aria-label="Un ciclo in meno">−</button><output id="cy" aria-live="polite">1</output><button type="button" id="inc" aria-label="Un ciclo in più">+</button></div>
+        </fieldset>
+      </div>
+    </div>
     <p class="note">Pagamento solo in contanti. Il prezzo dei prodotti è indicato sul distributore.</p>
   </div>
 </section>
 
 <section id="chi-siamo" class="tint">
   <div class="wrap about">
-    <div class="banner" role="img" aria-label="Spazio per una foto">Foto di prova</div>
+    <div class="brandcard"><img src="logo-completo.png" alt="Logo Lava e Asciuga, Viale Monza 109" width="640" height="511" loading="lazy"></div>
     <div>
       <h2>Chi siamo</h2>
-      <p>Bolle Blu è una realtà storica di Milano, con anni di esperienza alle spalle. Da sempre una lavanderia di quartiere a NoLo, pensata per chi ha poco tempo: macchine professionali, locale pulito e orario continuato.</p>
+      <p>Lava &amp; Asciuga è una realtà storica di Milano, con anni di esperienza alle spalle. Da sempre una lavanderia di quartiere a NoLo, pensata per chi ha poco tempo: macchine professionali, locale pulito e orario continuato.</p>
       <ul class="tick">
         <li><svg><use href="#ok"/></svg>Aperti tutti i giorni, anche i festivi</li>
         <li><svg><use href="#ok"/></svg>Macchine per ogni carico, dai capi piccoli ai piumoni</li>
@@ -235,15 +287,62 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem
           <tr><td>Domenica e festivi</td><td>7:30–22:00</td></tr>
         </tbody></table>
         <p>Metro M1 (linea rossa), fermata Rovereto.</p>
+        <!-- MODIFICA: inserisci qui il tuo numero di telefono -->
         <p>Telefono: 000 000 0000</p>
         <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Monza+109,+Milano" target="_blank" rel="noopener">Apri in Google Maps</a>
       </div>
-      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Monza+109,+Milano" target="_blank" rel="noopener" aria-label="Apri la posizione in Google Maps"><span><svg><use href="#pin"/></svg>Bolle Blu<br><small style="font-weight:500">Tocca per aprire la mappa</small></span></a>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Monza+109,+Milano" target="_blank" rel="noopener" aria-label="Apri la posizione in Google Maps"><span><svg><use href="#pin"/></svg>Lava &amp; Asciuga<br><small style="font-weight:500">Tocca per aprire la mappa</small></span></a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap"><span>© Bolle Blu – Lavanderia self service</span><span>Viale Monza 109, NoLo, Milano</span></div></footer>
+<footer><div class="wrap"><img src="logo-intestazione.png" alt="" width="640" height="158"><span>© Lava &amp; Asciuga – Lavanderia self service</span><span>Viale Monza 109, NoLo, Milano</span></div></footer>
+<dialog id="lb" aria-label="Foto ingrandita"><button class="x" type="button" aria-label="Chiudi">✕</button><img alt=""></dialog>
+<script>
+(function(){
+var d=document,root=d.documentElement,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var hd=d.querySelector("header.top");
+function sc(){hd.classList.toggle("scrolled",scrollY>8)}addEventListener("scroll",sc,{passive:true});sc();
+if("IntersectionObserver" in window&&!rm){
+  root.classList.add("rv-on");
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add("in");io.unobserve(el);setTimeout(function(){el.classList.remove("reveal","in")},900)}})},{threshold:.12});
+  d.querySelectorAll(".head,.step,.card,.price,.extra,.calc,.gal2 figure,.rev,.faqs details,.box,.map,.about>*").forEach(function(el){el.classList.add("reveal");io.observe(el)});
+}
+var links=[].slice.call(d.querySelectorAll("nav a,.mnav a"));
+if("IntersectionObserver" in window){
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute("href")==="#"+e.target.id;a.classList.toggle("on",on);if(on&&a.closest(".mnav")){var m=a.closest(".mnav");m.scrollTo({left:a.offsetLeft-m.clientWidth/2+a.offsetWidth/2,behavior:rm?"auto":"smooth"})}})}})},{rootMargin:"-45% 0px -50% 0px"});
+  d.querySelectorAll("main section[id]").forEach(function(s){so.observe(s)});
+}
+var st=d.getElementById("status");
+function upd(){
+  var p=new Intl.DateTimeFormat("it-IT",{timeZone:"Europe/Rome",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date()),h=0,m=0;
+  p.forEach(function(x){if(x.type==="hour")h=+x.value;if(x.type==="minute")m=+x.value});
+  var t=h*60+m,open=t>=450&&t<1320,s=st.querySelector("span");
+  st.className="status "+(open?"open":"closed");
+  s.textContent=open?(1320-t<=30?"Aperti ora, chiudiamo alle 22:00":"Aperti ora, fino alle 22:00"):(t<450?"Chiusi ora, apriamo alle 7:30":"Chiusi ora, riapriamo domani alle 7:30");
+}
+if(st){upd();setInterval(upd,60000)}
+var cy=1,tot=d.getElementById("tot"),out=d.getElementById("cy");
+function calc(){var w=+d.querySelector("input[name=w]:checked").value;tot.textContent="€ "+(w+cy*4.5).toFixed(2).replace(".",",");out.textContent=cy}
+d.querySelectorAll("input[name=w]").forEach(function(r){r.addEventListener("change",calc)});
+d.getElementById("dec").addEventListener("click",function(){if(cy>0){cy--;calc()}});
+d.getElementById("inc").addEventListener("click",function(){if(cy<8){cy++;calc()}});
+var fq=d.querySelectorAll(".faqs details");
+fq.forEach(function(a){a.addEventListener("toggle",function(){if(a.open)fq.forEach(function(b){if(b!==a)b.open=false})})});
+var lb=d.getElementById("lb");
+if(typeof lb.showModal==="function"){
+  var li=lb.querySelector("img");
+  function show(im){li.src=im.src;li.alt=im.alt;lb.showModal()}
+  d.querySelectorAll(".gal2 img").forEach(function(im){
+    im.tabIndex=0;im.setAttribute("role","button");im.setAttribute("aria-label","Ingrandisci: "+im.alt);
+    im.addEventListener("click",function(){show(im)});
+    im.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();show(im)}});
+  });
+  lb.querySelector(".x").addEventListener("click",function(){lb.close()});
+  lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
+}
+})();
+</script>
 </body>
 </html>
