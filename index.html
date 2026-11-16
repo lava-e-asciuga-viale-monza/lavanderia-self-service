@@ -129,6 +129,18 @@ dialog#lb .x{position:absolute;top:.6rem;right:.6rem;width:46px;height:46px;bord
 .brandcard{background:#fff;border:1px solid var(--line);border-radius:28px;padding:1.6rem;display:grid;place-items:center;box-shadow:var(--shadow)}
 .brandcard img{display:block;width:min(100%,460px);height:auto}
 footer .wrap{align-items:center}footer img{height:40px;width:auto;display:block;mix-blend-mode:multiply}
+
+/* --- smartphone: scorrimento laterale per servizi, prezzi e recensioni --- */
+.dots{display:none}
+@media (max-width:759px){
+.cards,.prices,.rv{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;gap:1rem;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:1.25rem;margin-inline:-1.25rem;padding:.4rem 1.25rem 1.1rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cards::-webkit-scrollbar,.prices::-webkit-scrollbar,.rv::-webkit-scrollbar{display:none}
+.cards>*,.prices>*,.rv>*{scroll-snap-align:start;min-width:0}
+.prices{grid-auto-columns:78%}.rv{grid-auto-columns:86%}
+.dots{display:flex;justify-content:center;align-items:center;gap:.45rem;margin:.1rem 0 .4rem}
+.dots i{width:8px;height:8px;border-radius:99px;background:var(--line);transition:width .25s,background .25s}
+.dots i.on{width:22px;background:var(--brand)}
+}
 </style>
 </head>
 <body>
@@ -342,6 +354,27 @@ if(typeof lb.showModal==="function"){
   lb.querySelector(".x").addEventListener("click",function(){lb.close()});
   lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
 }
+var cs=[].slice.call(d.querySelectorAll(".cards,.prices,.rv")),mq=matchMedia("(max-width:759px)");
+cs.forEach(function(el){
+  var dots=d.createElement("div");dots.className="dots";dots.setAttribute("aria-hidden","true");
+  [].forEach.call(el.children,function(){dots.appendChild(d.createElement("i"))});
+  el.after(dots);
+  function mark(){
+    var k=el.children,step=k.length>1?k[1].offsetLeft-k[0].offsetLeft:1,i=Math.round(el.scrollLeft/step);
+    if(el.scrollLeft+el.clientWidth>=el.scrollWidth-4)i=k.length-1;
+    i=Math.max(0,Math.min(k.length-1,i));
+    [].forEach.call(dots.children,function(x,n){x.classList.toggle("on",n===i)});
+  }
+  var tick=0;
+  el.addEventListener("scroll",function(){if(!tick){tick=requestAnimationFrame(function(){tick=0;mark()})}},{passive:true});
+  function a11y(){
+    if(mq.matches){el.tabIndex=0;el.setAttribute("role","region");el.setAttribute("aria-label","Elenco scorrevole: scorri di lato per vedere tutto")}
+    else{el.removeAttribute("tabindex");el.removeAttribute("role");el.removeAttribute("aria-label")}
+    mark();
+  }
+  a11y();
+  if(mq.addEventListener)mq.addEventListener("change",a11y);else mq.addListener(a11y);
+});
 })();
 </script>
 </body>
