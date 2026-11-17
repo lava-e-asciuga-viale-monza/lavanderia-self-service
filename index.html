@@ -146,10 +146,59 @@ footer .wrap{align-items:center}footer img{height:40px;width:auto;display:block;
 .btnrow{display:flex;flex-wrap:wrap;gap:.7rem}
 .chips a,.box address a{color:inherit;text-decoration:none}.chips a:hover,.box address a:hover{text-decoration:underline}
 footer a{color:var(--brand);font-weight:700;text-decoration:none}
+
+/* --- stile dinamico, card in rilievo, icone colorate --- */
+.strip{background:var(--brand);color:#fff}.strip span::after{background:var(--sun)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--sun),#f784c5);z-index:60;pointer-events:none}
+.head h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin:.65rem auto 0;background:linear-gradient(90deg,var(--sun),var(--brand))}
+.btn{transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{box-shadow:0 12px 22px -12px rgba(7,96,111,.85)}.btn.sun:hover{box-shadow:0 12px 22px -12px rgba(255,154,42,1)}.btn:active{transform:scale(.97)}
+/* hero con bolle leggere */
+.hero{position:relative;overflow:hidden}.hero .wrap{position:relative;z-index:1}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none;animation:float 9s ease-in-out infinite}
+.hero::before{width:230px;height:230px;left:-70px;bottom:-70px;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.95),rgba(56,182,255,.24) 60%,rgba(56,182,255,.06))}
+.hero::after{width:120px;height:120px;right:5%;top:16%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.95),rgba(247,132,197,.3) 60%,rgba(247,132,197,.06));animation-duration:11s;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+/* card in rilievo */
+.card,.price,.rev,.step,.box,.calc{border:1px solid rgba(7,96,111,.16);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 5px rgba(7,70,84,.07),0 16px 32px -16px rgba(7,70,84,.38)}
+.card,.price,.rev{position:relative;overflow:hidden}
+.card::before,.price::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--brand),var(--sun))}
+.price{padding-top:2rem}
+.rev::before{content:"\201C";position:absolute;right:1rem;top:-.4rem;font:800 5.5rem/1 Manrope,sans-serif;color:rgba(255,154,42,.28)}
+.step::before{box-shadow:0 6px 12px -6px rgba(255,154,42,.9)}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+.card:hover,.price:hover,.rev:hover{transform:translateY(-6px);border-color:rgba(255,154,42,.7);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 4px 8px rgba(7,70,84,.08),0 24px 40px -18px rgba(7,70,84,.5)}
+.card:hover svg.i{transform:rotate(-6deg) scale(1.1)}
+.chips li:hover{transform:translateY(-2px);box-shadow:0 10px 18px -12px rgba(7,70,84,.6)}
+}
+.chips li{transition:transform .2s ease,box-shadow .2s ease}
+/* icone colorate */
+.card svg.i{box-sizing:content-box;padding:.75rem;border-radius:18px;transition:transform .25s ease;margin-bottom:1rem}
+.card:nth-child(4n+1) svg.i{background:linear-gradient(135deg,#d3f0f4,#b6e3ea);color:#07606f}
+.card:nth-child(4n+2) svg.i{background:linear-gradient(135deg,#ffe8cb,#ffd2a1);color:#b45309}
+.card:nth-child(4n+3) svg.i{background:linear-gradient(135deg,#d9edff,#b9dcff);color:#1d6fb8}
+.card:nth-child(4n+4) svg.i{background:linear-gradient(135deg,#ffe0f0,#ffc5e1);color:#b0397a}
+.chips li:nth-child(1) svg{color:#07606f}.chips li:nth-child(2) svg{color:#c26a00}.chips li:nth-child(3) svg{color:#1d6fb8}.chips li:nth-child(4) svg{color:#d6458e}
+.tick svg{width:28px;height:28px;padding:4px;border-radius:50%;background:rgba(255,154,42,.2);color:#b45309;margin-top:0}
+.badge{border-left:5px solid var(--sun)}
+.status.open i{animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,.5)}100%{box-shadow:0 0 0 10px rgba(31,157,85,0)}}
+.map svg{animation:bob 2.4s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-7px)}}
+details{border:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+details[open]{border-color:var(--sun);box-shadow:0 12px 24px -16px rgba(7,70,84,.45)}
+.opts input:checked+span{box-shadow:0 8px 14px -8px rgba(7,96,111,.8)}
+@media (max-width:759px){.cards,.prices,.rv,.gal2{padding-top:.6rem;padding-bottom:1.7rem}}
+@media (prefers-reduced-motion:reduce){.hero::before,.hero::after,.map svg,.status.open i{animation:none}.card:hover svg.i{transform:none}.progress{display:none}}
+
+/* --- mappa Google incorporata --- */
+.mapwrap{position:relative;border-radius:var(--r);overflow:hidden;min-height:340px;border:1px solid rgba(7,96,111,.16);box-shadow:0 2px 5px rgba(7,70,84,.07),0 16px 32px -16px rgba(7,70,84,.38)}
+.mapwrap .map{position:absolute;inset:0;min-height:0;border-radius:0}
+.mapwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#c3e3ea}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenuto">Vai al contenuto</a>
+<div class="progress" id="pr" aria-hidden="true"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <symbol id="wash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="3"/><circle cx="12" cy="13.5" r="4.5"/><path d="M7.5 6h.01M10.5 6h.01"/></symbol>
 <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></symbol>
@@ -308,7 +357,7 @@ footer a{color:var(--brand);font-weight:700;text-decoration:none}
         <p>Telefono: <a href="tel:+393895908927">+39 389 590 8927</a></p>
         <div class="btnrow"><a class="btn sun" href="tel:+393895908927">Chiama ora</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Monza+109,+Milano" target="_blank" rel="noopener">Apri in Google Maps</a><a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Viale+Monza+109,+Milano" target="_blank" rel="noopener">Indicazioni</a></div>
       </div>
-      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Monza+109,+Milano" target="_blank" rel="noopener" aria-label="Apri la posizione in Google Maps"><span><svg><use href="#pin"/></svg>Lava &amp; Asciuga<br><small style="font-weight:500">Tocca per aprire la mappa</small></span></a>
+      <div class="mapwrap" id="mapbox"><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Monza+109,+Milano" target="_blank" rel="noopener" aria-label="Apri la posizione in Google Maps"><span><svg><use href="#pin"/></svg>Lava &amp; Asciuga<br><small style="font-weight:500">Tocca per aprire la mappa</small></span></a></div>
     </div>
   </div>
 </section>
@@ -320,11 +369,12 @@ footer a{color:var(--brand);font-weight:700;text-decoration:none}
 (function(){
 var d=document,root=d.documentElement,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 var hd=d.querySelector("header.top");
-function sc(){hd.classList.toggle("scrolled",scrollY>8)}addEventListener("scroll",sc,{passive:true});sc();
+var pr=d.getElementById("pr");
+function sc(){hd.classList.toggle("scrolled",scrollY>8);var h=root.scrollHeight-innerHeight;if(pr&&h>0)pr.style.width=Math.min(100,scrollY/h*100)+"%"}addEventListener("scroll",sc,{passive:true});sc();
 if("IntersectionObserver" in window&&!rm){
   root.classList.add("rv-on");
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add("in");io.unobserve(el);setTimeout(function(){el.classList.remove("reveal","in")},900)}})},{threshold:.12});
-  d.querySelectorAll(".head,.step,.card,.price,.extra,.calc,.gal2 figure,.rev,.faqs details,.box,.map,.about>*").forEach(function(el){el.classList.add("reveal");io.observe(el)});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add("in");io.unobserve(el);setTimeout(function(){el.classList.remove("reveal","in");el.style.transitionDelay=""},1500)}})},{threshold:.12});
+  d.querySelectorAll(".head,.step,.card,.price,.extra,.calc,.gal2 figure,.rev,.faqs details,.box,.map,.about>*").forEach(function(el){el.style.transitionDelay=Math.min([].indexOf.call(el.parentNode.children,el),5)*80+"ms";el.classList.add("reveal");io.observe(el)});
 }
 var links=[].slice.call(d.querySelectorAll("nav a,.mnav a"));
 if("IntersectionObserver" in window){
@@ -380,7 +430,18 @@ cs.forEach(function(el){
   a11y();
   if(mq.addEventListener)mq.addEventListener("change",a11y);else mq.addListener(a11y);
 });
+var mb=d.getElementById("mapbox");
+if(mb){
+  var fr=d.createElement("iframe");
+  fr.src="https://www.google.com/maps?q=Viale+Monza+109,+Milano&z=16&output=embed";
+  fr.title="Mappa: Lava e Asciuga, Viale Monza 109, Milano";fr.loading="lazy";fr.referrerPolicy="no-referrer-when-downgrade";fr.setAttribute("allowfullscreen","");
+  d.addEventListener("securitypolicyviolation",function(e){if(/frame|child/.test(e.violatedDirective)&&fr.parentNode)fr.remove()});
+  mb.appendChild(fr);
+}
 })();
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
